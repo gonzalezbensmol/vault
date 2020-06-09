@@ -51,11 +51,11 @@ get_vault_data <- function(url=NULL,path=NULL,token=NULL,dataframe=NULL){
   ###Gets the data from the JSON format
   res<- jsonlite::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
   ###Puts the data into a data frame
-  if(dataframe=="Y"){
-  res<- as.data.frame(res$data)
-  }else if(dataframe=="N"){
-  res
-  }
+  # if(dataframe=="Y"){
+  # res<- as.data.frame(res$data)
+  # }else if(dataframe=="N"){
+  # res
+  # }
 
   return(res)
 }
