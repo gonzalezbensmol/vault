@@ -36,7 +36,7 @@
 
 get_token <- function(url,user,pass){
   ###url of the Hashicorp Vault instance
-  url <- 'http://rgonzovault.us'
+  url <- url
   ###Path to the Hashicorp Vault User Verification Path
   path <- user
   ###Secrets to be written to Vault.
