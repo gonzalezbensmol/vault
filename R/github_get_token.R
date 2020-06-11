@@ -17,7 +17,6 @@
 #'
 #' @param url url of the Hashicorp Vault instance.
 #' @param github_token personal authentication token or PAT from your github repo.
-#' @aliases data
 #' @keywords github_get_token
 #' @return Return's the user token that allows an individual to query secrets in Vault. 
 #' @name github_get_token

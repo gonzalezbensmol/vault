@@ -2,7 +2,6 @@
 % Please edit documentation in R/get_token.R
 \name{get_token}
 \alias{get_token}
-\alias{data}
 \title{get_token}
 \usage{
 get_token(url, user, pass)

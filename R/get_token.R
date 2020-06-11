@@ -18,7 +18,6 @@
 #' @param url url of the Hashicorp Vault instance.
 #' @param user username registered in Vault.
 #' @param pass password for username registered in Vault
-#' @aliases data
 #' @keywords get_token
 #' @return Return's the user token that allows an individual to query secrets in Vault. 
 #' @name get_token

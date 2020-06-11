@@ -18,7 +18,6 @@
 #' @param url url of the Hashicorp Vault instance.
 #' @param token token for the vault instance.
 #' @param path path to the secret in the vault instance.
-#' @aliases data
 #' @keywords get_vault_data
 #' @return Return's the data or secrets that are in the vault instance.
 #' @name get_vault_data

@@ -2,7 +2,6 @@
 % Please edit documentation in R/get_data_vault.R
 \name{get_vault_data}
 \alias{get_vault_data}
-\alias{data}
 \title{get_vault_data}
 \usage{
 get_vault_data(url = NULL, path = NULL, token = NULL)

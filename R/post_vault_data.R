@@ -20,7 +20,6 @@
 #' @param token token for the vault instance.
 #' @param path path to the secret in the vault instance.
 #' @param secrets secrets that are being written to vault.
-#' @aliases data
 #' @keywords post_vault_data
 #' @return Allows a user to write data to Vault. 
 #' @name post_vault_data
