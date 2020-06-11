@@ -4,8 +4,8 @@ Title: Allows a user to interact with Hashicorp Vault
 Version: 0.1.0
 Author: Ben Gonzalez
 Maintainer: Ben Gonzalez<gonzalezben393@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: This package allows Hashicorp vault users to interact with vault via its built in API.
+              The user simply needs a token from their vault instance to interact with it. Utilizing the token users can read & write secrets to and from vault via the specified path e.g.(secrets/path).
 License: GPL (>= 2)
 Encoding: UTF-8
 Imports: httr, jsonlite, rjson
