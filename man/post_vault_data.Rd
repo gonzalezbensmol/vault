@@ -2,7 +2,6 @@
 % Please edit documentation in R/post_vault_data.R
 \name{post_vault_data}
 \alias{post_vault_data}
-\alias{data}
 \title{post_vault_data}
 \usage{
 post_vault_data(url = NULL, path = NULL, token = NULL, secrets)
