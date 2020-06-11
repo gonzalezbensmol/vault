@@ -20,7 +20,7 @@
 #' @param pass password for username registered in Vault
 #' @aliases data
 #' @keywords get_token
-#' @return Return's the user token that allows an individual to query results in Vault. 
+#' @return Return's the user token that allows an individual to query secrets in Vault. 
 #' @name get_token
 #' @title get_token
 #' @import httr

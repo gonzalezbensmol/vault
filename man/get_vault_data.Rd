@@ -5,7 +5,7 @@
 \alias{data}
 \title{get_vault_data}
 \usage{
-get_vault_data(url = NULL, path = NULL, token = NULL, dataframe = NULL)
+get_vault_data(url = NULL, path = NULL, token = NULL)
 }
 \arguments{
 \item{url}{url of the Hashicorp Vault instance.}

@@ -1,13 +1,13 @@
 Package: vault
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Allows a user to interact with Hashicorp Vault
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Ben Gonzalez
+Maintainer: Ben Gonzalez<gonzalezben393@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: GPL (>= 2)
 Encoding: UTF-8
-Imports: httr, jsonlite
+Imports: httr, jsonlite, rjson
 LazyData: true
 RoxygenNote: 7.0.2

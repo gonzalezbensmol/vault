@@ -35,7 +35,7 @@
 #' @export
 
 
-get_vault_data <- function(url=NULL,path=NULL,token=NULL,dataframe=NULL){
+get_vault_data <- function(url=NULL,path=NULL,token=NULL){
 
   ###url of the Hashicorp Vault instance
   url <- url
