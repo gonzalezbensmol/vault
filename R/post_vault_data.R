@@ -11,14 +11,15 @@
 #   Test Package:              'Ctrl + Shift + T'
 #' Vault: Posts the Vault Data
 #'
-#' This function gets secrets or data from the vault instance and returns them inside a dataframe.
+#' This function writes secrets or data to the vault instance and gives a message if they were written correctly.
 #' You will need the Hashicorp Vault url you are using including the full path to the secret e.g. (https://url.vault.com/v1/secret/things)
-#' and lastly you will need a token that allows you to interact with Vault via the API. You can pass a list of secrets at once use 'list(one="two",three="four) and so on and so forth. This will allow you to send several secrets to Vault at once.
+#' and lastly you will need a token that allows you to interact with Vault via the API. You can pass a list of secrets at once use 'list(one="two",three="four) and so on and so forth.
+#' This will allow you to send several secrets to Vault at once.
 #'
 #' @param url url of the Hashicorp Vault instance.
 #' @param token token for the vault instance.
 #' @param path path to the secret in the vault instance.
-#' @param secrets secrets that are beign written to vault.
+#' @param secrets secrets that are being written to vault.
 #' @aliases data
 #' @keywords post_vault_data
 #' @return Allows a user to write data to Vault. 
@@ -28,7 +29,7 @@
 #' @import jsonlite
 #' @examples
 #'
-#' \dontrun{  get_vault_data(url,path,token,secrets=list(one="two',three="four"))
+#' \dontrun{  post_vault_data(url,path,token,token,secrets=list(one="two',three="four"))
 #'
 #' }
 #'

@@ -14,7 +14,7 @@ post_vault_data(url = NULL, path = NULL, token = NULL, secrets)
 
 \item{token}{token for the vault instance.}
 
-\item{secrets}{secrets that are beign written to vault.}
+\item{secrets}{secrets that are being written to vault.}
 }
 \value{
 Allows a user to write data to Vault.
@@ -23,8 +23,9 @@ Allows a user to write data to Vault.
 Vault: Posts the Vault Data
 }
 \details{
-This function gets secrets or data from the vault instance and returns them inside a dataframe.
+This function writes secrets or data to the vault instance and gives a message if they were written correctly.
 You will need the Hashicorp Vault url you are using including the full path to the secret e.g. (https://url.vault.com/v1/secret/things)
-and lastly you will need a token that allows you to interact with Vault via the API. You can pass a list of secrets at once use 'list(one="two",three="four) and so on and so forth. This will allow you to send several secrets to Vault at once.
+and lastly you will need a token that allows you to interact with Vault via the API. You can pass a list of secrets at once use 'list(one="two",three="four) and so on and so forth.
+This will allow you to send several secrets to Vault at once.
 }
 \keyword{post_vault_data}

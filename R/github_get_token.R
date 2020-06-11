@@ -20,14 +20,14 @@
 #' @aliases data
 #' @keywords github_get_token
 #' @return Return's the user token that allows an individual to query secrets in Vault. 
-#' @name get_token
-#' @title get_token
+#' @name github_get_token
+#' @title github_get_token
 #' @import httr
 #' @import jsonlite
 #' @import rjson
 #' @examples
 #'
-#' \dontrun{  github_get_token(url,github_token)
+#' \dontrun{  github_get_token(url='vautl.url',github_token='12345abcdef)
 #'
 #' }
 #'

@@ -13,8 +13,6 @@ get_vault_data(url = NULL, path = NULL, token = NULL)
 \item{path}{path to the secret in the vault instance.}
 
 \item{token}{token for the vault instance.}
-
-\item{dataframe}{whether to return the data as a dataframe.}
 }
 \value{
 Return's the data or secrets that are in the vault instance.
