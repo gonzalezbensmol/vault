@@ -31,7 +31,7 @@
 #'
 #' @export
 
-get_token <- function(url,user,pass){
+get_user_token <- function(url,user,pass){
   ###url of the Hashicorp Vault instance
   url <- url
   ###Path to the Hashicorp Vault User Verification Path
