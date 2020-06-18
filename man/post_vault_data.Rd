@@ -19,12 +19,19 @@ post_vault_data(url = NULL, path = NULL, token = NULL, secrets)
 Allows a user to write data to Vault.
 }
 \description{
-Vault: Posts the Vault Data
+post_vault_data: Posts the Vault Data
 }
 \details{
 This function writes secrets or data to the vault instance and gives a message if they were written correctly.
 You will need the Hashicorp Vault url you are using including the full path to the secret e.g. (https://url.vault.com/v1/secret/things)
 and lastly you will need a token that allows you to interact with Vault via the API. You can pass a list of secrets at once use 'list(one="two",three="four) and so on and so forth.
 This will allow you to send several secrets to Vault at once.
+}
+\examples{
+
+\dontrun{  post_vault_data(url,path,token,token,secrets=list(one="two",three="four"))
+
+}
+
 }
 \keyword{post_vault_data}

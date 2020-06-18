@@ -7,7 +7,7 @@
 get_vault_data(url = NULL, path = NULL, token = NULL)
 }
 \arguments{
-\item{url}{url of the Hashicorp Vault instance.}
+\item{url}{URL of the Hashicorp Vault instance.}
 
 \item{path}{path to the secret in the vault instance.}
 
@@ -20,8 +20,8 @@ Return's the data or secrets that are in the vault instance.
 Vault: Gets the Vault Data
 }
 \details{
-This function gets secrets or data from the vault instance and returns them inside a dataframe.
-You will need the Hashicorp Vault url you are using including the full path to the secret e.g. (https://url.vault.com/v1/secret/things)
+This function gets "secrets" or "data" from the vault instance and returns them inside a dataframe.
+You will need the Hashicorp Vault URL you are using including the full path to the secret e.g. (https://url.vault.com/v1/secret/things)
 and lastly you will need a token that allows you to interact with Vault via the API.
 }
 \examples{

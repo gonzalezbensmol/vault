@@ -9,7 +9,7 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
-#' Vault: Posts the Vault Data
+#' post_vault_data: Posts the Vault Data
 #'
 #' This function writes secrets or data to the vault instance and gives a message if they were written correctly.
 #' You will need the Hashicorp Vault url you are using including the full path to the secret e.g. (https://url.vault.com/v1/secret/things)
@@ -28,7 +28,7 @@
 #' @import jsonlite
 #' @examples
 #'
-#' \dontrun{  post_vault_data(url,path,token,token,secrets=list(one="two',three="four"))
+#' \dontrun{  post_vault_data(url,path,token,token,secrets=list(one="two",three="four"))
 #'
 #' }
 #'

@@ -1,4 +1,4 @@
-#get_token
+#get_approle_token
 #
 # You can learn more about package authoring with RStudio at:
 #
@@ -16,37 +16,34 @@
 #' and lastly you will need a token that allows you to interact with Vault via the API. You can pass a list of secrets at once use 'list(one="two",three="four) and so on and so forth. This will allow you to send several secrets to Vault at once.
 #'
 #' @param url url of the Hashicorp Vault instance.
-#' @param user username registered in Vault.
-#' @param pass password for username registered in Vault
-#' @keywords get_token
-#' @return Return's the user token that allows an individual to query secrets in Vault. 
-#' @name get_token
-#' @title get_token
+#' @param role_id role_id of the approle in Vault.
+#' @param secret_id secret_id of the approle in Vault. 
+#' @keywords get_approle_token
+#' @return Return's the user token that allows an approle to query secrets in Vault. 
+#' @name get_approle_token
+#' @title get_approle_token
 #' @import httr
 #' @import jsonlite
 #' @import rjson
 #' @examples
 #'
-#' \dontrun{  get_token(url,user,pass)
+#' \dontrun{  get_approle_token(url,role_id,secret_id)
 #'
 #' }
 #'
 #' @export
 
-get_token <- function(url,user,pass){
+get_approle_token <- function(url,role_id,secret_id){
   ###url of the Hashicorp Vault instance
   url <- url
-  ###Path to the Hashicorp Vault User Verification Path
-  path <- user
   ###Secrets to be written to Vault.
-  secrets <- list(username=user,password=pass)
+  secrets <- list(role_id=role_id,secret_id=secret_id)
   data_to_insert<- rjson::toJSON(secrets)
-  ###Pastes the url and path and creates the path through /v1/secret/
-  complete_url<- paste0(url,':8200/v1/auth/userpass/login/',path)
-  ###Puts the data into the Hashicorp Vault path.
+  ###Pastes the url and the approle login path
+  complete_url<- paste0(url,':8200/v1/auth/approle/login')
+  ###Posts the data for a return of the approle token to query data from Vault
   res <- httr::POST(complete_url, body = data_to_insert, encode = "json",verbose())
-  ###If the status returned is 204 return the following message else return an error message
+  ###Get the client_token for querying data from Vault via the designated approle
   results<- rjson::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
-  return(results$auth)
+  return(results$auth$client_token)
 }
-

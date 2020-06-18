@@ -11,11 +11,11 @@
 #   Test Package:              'Ctrl + Shift + T'
 #' Vault: Gets the Vault Data
 #'
-#' This function gets secrets or data from the vault instance and returns them inside a dataframe.
-#' You will need the Hashicorp Vault url you are using including the full path to the secret e.g. (https://url.vault.com/v1/secret/things)
+#' This function gets "secrets" or "data" from the vault instance and returns them inside a dataframe.
+#' You will need the Hashicorp Vault URL you are using including the full path to the secret e.g. (https://url.vault.com/v1/secret/things)
 #' and lastly you will need a token that allows you to interact with Vault via the API.
 #'
-#' @param url url of the Hashicorp Vault instance.
+#' @param url URL of the Hashicorp Vault instance.
 #' @param token token for the vault instance.
 #' @param path path to the secret in the vault instance.
 #' @keywords get_vault_data
@@ -35,7 +35,7 @@
 
 get_vault_data <- function(url=NULL,path=NULL,token=NULL){
 
-  ###url of the Hashicorp Vault instance
+  ###URL of the Hashicorp Vault instance
   url <- url
   ###Token from the Hashicorp Vault user
   token <- token
