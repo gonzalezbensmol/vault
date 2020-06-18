@@ -42,7 +42,7 @@ get_approle_token <- function(url,role_id,secret_id){
   ###Pastes the url and the approle login path
   complete_url<- paste0(url,':8200/v1/auth/approle/login')
   ###Posts the data for a return of the approle token to query data from Vault
-  res <- httr::POST(complete_url, body = data_to_insert, encode = "json",verbose())
+  res <- httr::POST(complete_url, body = data_to_insert, encode = "json",httr::verbose())
   ###Get the client_token for querying data from Vault via the designated approle
   results<- rjson::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
   return(results$auth$client_token)

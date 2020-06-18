@@ -49,7 +49,8 @@ post_vault_data <- function(url=NULL,path=NULL,token=NULL,secrets){
   complete_url<- paste0(url,'/v1/secret/',path)
   body <- jsonlite::toJSON(data_to_insert)
   ###Puts the data into the Hashicorp Vault path.
-  res <- httr::POST(complete_url,httr::add_headers('X-Vault-Token' = token), body = data_to_insert, encode = "json",verbose())
+  res <- httr::POST(complete_url,httr::add_headers('X-Vault-Token' = token), body = data_to_insert, encode = "json",httr:verbose())
+                    
   ###If the status returned is 204 return the following message else return an error message
   if(res$status_code==204){
     message(paste0("Data successfully written to ",path))

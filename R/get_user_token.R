@@ -42,7 +42,7 @@ get_user_token <- function(url,user,pass){
   ###Pastes the url and path and creates the path through /v1/secret/
   complete_url<- paste0(url,':8200/v1/auth/userpass/login/',path)
   ###Puts the data into the Hashicorp Vault path.
-  res <- httr::PUT(complete_url, body = data_to_insert, encode = "json",verbose())
+  res <- httr::PUT(complete_url, body = data_to_insert, encode = "json",httr::verbose())
   ###If the status returned is 204 return the following message else return an error message
   results<- rjson::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
   return(results$auth)

@@ -41,7 +41,7 @@ get_github_token <- function(url,github_token){
   ###Pastes the url and github login path together
   complete_url<- paste0(url,':8200/v1/auth/github/login')
   ###Posts the data to Vault to retrieve the user token
-  res <- httr::POST(complete_url, body = token_data, encode = "json",verbose())
+  res <- httr::POST(complete_url, body = token_data, encode = "json",httr::verbose())
   ###Converts data from UTF-8 to json
   results<- rjson::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
   return(results$auth$client_token)
