@@ -2,10 +2,9 @@
 % Please edit documentation in R/get_user_token.R
 \name{get_user_token}
 \alias{get_user_token}
-\alias{get_token}
 \title{get_user_token}
 \usage{
-get_token(url, user, pass)
+get_user_token(url, user, pass)
 }
 \arguments{
 \item{url}{url of the Hashicorp Vault instance.}
