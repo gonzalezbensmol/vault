@@ -35,7 +35,7 @@
 
 get_secret_id <- function(url,role_name,token){
   ###url of the Hashicorp Vault instance
-  url <- 'rgonzovault.us'
+  url <- url
   ###Role Name to get approle ID
   role_name <- role_name
   ###Token from user

@@ -38,7 +38,7 @@
 post_vault_data <- function(url=NULL,path=NULL,token=NULL,secrets){
 
   ###url of the Hashicorp Vault instance
-  url <- 'rgonzovault.us'
+  url <- url
   ###Token from the Hashicorp Vault user
   token <- token
   ###Path to the Hashicorp Vault secrets
