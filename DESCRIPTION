@@ -8,6 +8,6 @@ Description: This package allows Hashicorp Vault users to interact with  their V
 License: GPL (>= 2)
 Encoding: UTF-8
 Depends: R (>= 3.1.0)
-Import: httr, jsonlite, rjson
+Imports: httr, jsonlite, rjson
 LazyData: true
 RoxygenNote: 7.0.2
