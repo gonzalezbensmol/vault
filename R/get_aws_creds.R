@@ -36,8 +36,7 @@ get_aws_creds <- function(url=NULL,role=NULL,token=NULL){
   ###url of the Hashicorp Vault instance
   url <- 'rgonzovault.us'
   ###Token
-  token <- 's.58DR0opUxgvrcP4U5neUnKQJ'
-  token <- user_token$client_token
+  token <- token
   ###Role to get security credentials in AWS
   role <- 'ben'
   ###Pastes the url and path and creates the path through /v1/secret/
