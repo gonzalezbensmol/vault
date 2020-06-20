@@ -42,7 +42,7 @@ get_vault_data <- function(url=NULL,path=NULL,token=NULL){
   ###Path to the Hashicorp Vault secrets
   path <- path
   ###Pastes the url and path and creates the path through /v1/secret/
-  complete_url<- paste0(url,'/v1/secret/',path)
+  complete_url<- paste0(url,':8200/v1/secret/',path)
 
   ###Gets the data from the Hashicorp Vault path
   res<- httr::GET(complete_url, httr::add_headers('X-Vault-Token' = token))

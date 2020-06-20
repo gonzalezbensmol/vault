@@ -4,7 +4,7 @@
 \alias{post_vault_data}
 \title{post_vault_data}
 \usage{
-post_vault_data(url = NULL, path = NULL, token = NULL, secrets)
+post_vault_data(url = NULL, path = NULL, token = NULL, secrets = NULL)
 }
 \arguments{
 \item{url}{url of the Hashicorp Vault instance.}
