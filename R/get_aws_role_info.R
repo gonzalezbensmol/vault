@@ -1,4 +1,4 @@
-#get_aws_creds
+#get_aws_role_info
 #
 # You can learn more about package authoring with RStudio at:
 #
@@ -9,36 +9,36 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
-#' Vault: Gets AWS creds from Vault.
+#' Vault: Gets the AWS role info from Vault. 
 #'
-#' This function gets the AWS creds from the role/IAM User registered in Vault. 
+#' This function gets the AWS role info from Vault for the role registered in your Vault instance. 
 #'
 #' @param url URL of the Hashicorp Vault instance.
 #' @param token token from user/github/approle/etc.... registered in Vault.
 #' @param role_name role_name for role registered in Vault
-#' @keywords get_aws_creds
+#' @keywords get_aws_role_info
 #' @return Return's the user token that allows an individual to query secrets in Vault. 
-#' @name get_aws_creds
-#' @title get_aws_creds
+#' @name get_aws_role_info
+#' @title get_aws_role_info
 #' @import httr
 #' @import jsonlite
 #' @import rjson
 #' @examples
 #'
-#' \dontrun{  get_aws_creds(url,token,role_name)
+#' \dontrun{  get_aws_role_info(url,token,role_name)
 #'
 #' }
 #'
 #' @export
 
 
-get_aws_creds <- function(url=NULL,token=NULL,role_name=NULL){
+get_aws_role_info <- function(url=NULL,token=NULL,role_name=NULL){
   ###url of Vault instance
   url <- url
   ###Token from Vault user/github/approle/etc...
   token <- token
   ####Paste together Vault url using the sprintf() function
-  complete_url <- sprintf('%s:8200/v1/aws/creds/%s',url,role_name)
+  complete_url <- sprintf('%s:8200/v1/aws/roles/%s',url,role_name)
   ###Gets the data from the Hashicorp Vault path
   res<- httr::GET(complete_url, httr::add_headers('X-Vault-Token' = token))
   results<- rjson::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))

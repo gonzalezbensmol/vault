@@ -1,4 +1,4 @@
-#get_aws_creds
+#list_aws_roles
 #
 # You can learn more about package authoring with RStudio at:
 #
@@ -9,42 +9,39 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
-#' Vault: Gets AWS creds from Vault.
+#' Vault: Lists the AWS roles registered in Vault.
 #'
-#' This function gets the AWS creds from the role/IAM User registered in Vault. 
+#' This function lists the AWS roles that are registered in Vault. 
 #'
 #' @param url URL of the Hashicorp Vault instance.
 #' @param token token from user/github/approle/etc.... registered in Vault.
-#' @param role_name role_name for role registered in Vault
-#' @keywords get_aws_creds
-#' @return Return's the user token that allows an individual to query secrets in Vault. 
-#' @name get_aws_creds
-#' @title get_aws_creds
+#' @keywords list_aws_roles
+#' @return Return's the AWS roles that are registered in Vault. 
+#' @name list_aws_roles
+#' @title list_aws_roles
 #' @import httr
 #' @import jsonlite
 #' @import rjson
 #' @examples
 #'
-#' \dontrun{  get_aws_creds(url,token,role_name)
+#' \dontrun{  list_aws_roles(url,token)
 #'
 #' }
 #'
 #' @export
 
 
-get_aws_creds <- function(url=NULL,token=NULL,role_name=NULL){
+list_aws_roles <- function(url=NULL,token=NULL){
   ###url of Vault instance
   url <- url
   ###Token from Vault user/github/approle/etc...
   token <- token
   ####Paste together Vault url using the sprintf() function
-  complete_url <- sprintf('%s:8200/v1/aws/creds/%s',url,role_name)
-  ###Gets the data from the Hashicorp Vault path
-  res<- httr::GET(complete_url, httr::add_headers('X-Vault-Token' = token))
+  complete_url <- sprintf('%s:8200/v1/aws/roles',url)
+  ###Gets the list of AWS roles registered in Vault
+  res<- httr::VERB(verb = 'LIST',complete_url, httr::add_headers('X-Vault-Token' = token))
   results<- rjson::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
-  print(results)
+  print(results$data$keys)
   
 }
-
-
 

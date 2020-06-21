@@ -4,29 +4,29 @@
 \alias{get_aws_creds}
 \title{get_aws_creds}
 \usage{
-get_aws_creds(url = NULL, role = NULL, token = NULL)
+get_aws_creds(url = NULL, token = NULL, role_name = NULL)
 }
 \arguments{
-\item{url}{url of the Hashicorp Vault instance.}
+\item{url}{URL of the Hashicorp Vault instance.}
 
-\item{role}{role to get secret key and secret access}
+\item{token}{token from user/github/approle/etc.... registered in Vault.}
 
-\item{token}{token to query Vault}
+\item{role_name}{role_name for role registered in Vault}
 }
 \value{
 Return's the user token that allows an individual to query secrets in Vault.
 }
 \description{
-Vault: Gets the Vault Data
+Vault: Gets AWS creds from Vault.
 }
 \details{
-This function gets AWS user creds via Vault to be used to connect to AWS services such as s3 buckets, ec2 instances, etc...
+This function gets the AWS creds from the role/IAM User registered in Vault.
 }
 \examples{
 
-\dontrun{  get_aws_creds(url,role,token)
+\dontrun{  get_aws_creds(url,token,role_name)
 
 }
 
 }
-\keyword{get_token}
+\keyword{get_aws_creds}

@@ -7,7 +7,7 @@
 get_user_token(url, user, pass)
 }
 \arguments{
-\item{url}{url of the Hashicorp Vault instance.}
+\item{url}{URL of the Hashicorp Vault instance.}
 
 \item{user}{username registered in Vault.}
 
@@ -20,7 +20,7 @@ Return's the user token that allows an individual to query secrets in Vault.
 Vault: Gets the Vault Data
 }
 \details{
-This function gets the user token from Vault for the user name registered in your Vault instance.
+This function gets the user token from Vault for the user name registered in your Vault instance registered at the auth/userpass path.
 }
 \examples{
 

@@ -9,12 +9,12 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
-#' Vault: Gets the Vault Data
+#' Vault: Gets the Approle ID from Vault.
 #'
-#' This function obtains the token for the user/github/etc... user from Vault. The user can then utilize the token retrieved to query secrets from Vault via the approle method. 
-#' You will need the url of the Hashicorp Vault you are using and your user/github/etc... token to retrieve the approle id.
+#' This function obtains the approle ID from Vault. The user can then utilize the approle ID retrieved to query secrets from Vault via the approle method. 
+#' You will need the URL of the Hashicorp Vault you are using and your user/github/etc... token to retrieve the approle id.
 #'
-#' @param url url of the Hashicorp Vault instance.
+#' @param url URL of the Hashicorp Vault instance.
 #' @param role_name name of the role in your Vault instance.
 #' @param token token from your loging role such as user/pass method or github/auth method. 
 #' @keywords get_role_id
@@ -26,7 +26,7 @@
 #' @import rjson
 #' @examples
 #'
-#' \dontrun{  get_role_id(url='vautl.url',role_name='jenkins',github_token='12345abcdef')
+#' \dontrun{  get_role_id(url='vautl.url',role_name='jenkins',token='12345abcdef')
 #'
 #' }
 #'

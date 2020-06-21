@@ -7,7 +7,7 @@
 get_role_id(url, role_name, token)
 }
 \arguments{
-\item{url}{url of the Hashicorp Vault instance.}
+\item{url}{URL of the Hashicorp Vault instance.}
 
 \item{role_name}{name of the role in your Vault instance.}
 
@@ -17,15 +17,15 @@ get_role_id(url, role_name, token)
 Return's the user/github/etc... token that allows an individual to query secrets in Vault via an approle.
 }
 \description{
-Vault: Gets the Vault Data
+Vault: Gets the Approle ID from Vault.
 }
 \details{
-This function obtains the token for the user/github/etc... user from Vault. The user can then utilize the token retrieved to query secrets from Vault via the approle method. 
-You will need the url of the Hashicorp Vault you are using and your user/github/etc... token to retrieve the approle id.
+This function obtains the approle ID from Vault. The user can then utilize the approle ID retrieved to query secrets from Vault via the approle method. 
+You will need the URL of the Hashicorp Vault you are using and your user/github/etc... token to retrieve the approle id.
 }
 \examples{
 
-\dontrun{  get_role_id(url='vautl.url',role_name='jenkins',github_token='12345abcdef')
+\dontrun{  get_role_id(url='vautl.url',role_name='jenkins',token='12345abcdef')
 
 }
 

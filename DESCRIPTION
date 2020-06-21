@@ -1,7 +1,7 @@
 Package: vault
 Type: Package
 Title: Allows a user to interact with Hashicorp Vault
-Version: 0.1.2
+Version: 0.1.7
 Author: Ben Gonzalez
 Maintainer: Ben Gonzalez<gonzalezben393@gmail.com>
 Description: This package allows Hashicorp Vault users to interact with  their Vault instance via its built in API.The user simply needs a token from their Vault instance to interact with it. Utilizing the token users can read & write secrets to and from vault via the specified path e.g.(secrets/path).
@@ -10,4 +10,4 @@ Encoding: UTF-8
 Depends: R (>= 3.1.0)
 Imports: httr, jsonlite, rjson
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0.9000

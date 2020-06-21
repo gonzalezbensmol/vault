@@ -11,9 +11,9 @@
 #   Test Package:              'Ctrl + Shift + T'
 #' Vault: Gets the Vault Data
 #'
-#' This function gets the user token from Vault for the user name registered in your Vault instance. 
+#' This function gets the user token from Vault for the user name registered in your Vault instance registered at the auth/userpass path. 
 #'
-#' @param url url of the Hashicorp Vault instance.
+#' @param url URL of the Hashicorp Vault instance.
 #' @param user username registered in Vault.
 #' @param pass password for username registered in Vault
 #' @keywords get_token

@@ -9,13 +9,10 @@
 #   Build and Reload Package:  'Ctrl + Shift + B'
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
-#' Vault: Gets the Vault Data
+#' Vault: Gets the approle token from Vault.
 #'
-#' This function gets secrets or data from the vault instance and returns them inside a dataframe.
-#' You will need the Hashicorp Vault url you are using including the full path to the secret e.g. (https://url.vault.com/v1/secret/things)
-#' and lastly you will need a token that allows you to interact with Vault via the API. You can pass a list of secrets at once use 'list(one="two",three="four) and so on and so forth. This will allow you to send several secrets to Vault at once.
-#'
-#' @param url url of the Hashicorp Vault instance.
+#' This function gets the approle token from the vault instance. You can then utilize the approle token to query data from vault.
+#' @param url URL of the Hashicorp Vault instance.
 #' @param role_id role_id of the approle in Vault.
 #' @param secret_id secret_id of the approle in Vault. 
 #' @keywords get_approle_token
