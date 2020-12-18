@@ -21,7 +21,6 @@
 #' @title list_aws_roles
 #' @import httr
 #' @import jsonlite
-#' @import rjson
 #' @examples
 #'
 #' \dontrun{  list_aws_roles(url,token)
@@ -40,7 +39,7 @@ list_aws_roles <- function(url=NULL,token=NULL){
   complete_url <- sprintf('%s:8200/v1/aws/roles',url)
   ###Gets the list of AWS roles registered in Vault
   res<- httr::VERB(verb = 'LIST',complete_url, httr::add_headers('X-Vault-Token' = token))
-  results<- rjson::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
+  results<- jsonlite::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
   print(results$data$keys)
   
 }

@@ -52,7 +52,6 @@
 #' @title config_aws_root_creds
 #' @import httr
 #' @import jsonlite
-#' @import rjson
 #' @examples
 #'
 #' \dontrun{  config_aws_root_creds(url,token,aws_key,aws_secret,aws_region)
@@ -74,7 +73,7 @@ config_aws_root_creds <- function(url=NULL,token=NULL,aws_key=NULL,aws_secret=NU
   ###AWS region where your IAM User is registered in AWS
   aws_region=aws_region
   ###Create list of AWS secrets
-  aws_list <- list(access_key=key,secret_key=secret,region=aws_region)
+  aws_list <- list(access_key=aws_key,secret_key=aws_secret,region=aws_region)
   ###Write AWS secrets to Json list
   data_to_insert<- jsonlite::toJSON(aws_list)
   ###Pastes the url and path and creates the path through /v1/secret/
@@ -84,9 +83,9 @@ config_aws_root_creds <- function(url=NULL,token=NULL,aws_key=NULL,aws_secret=NU
   
   ###If the status returned is 204 return the following message else return an error message
   if(res$status_code==204){
-    message(paste0("AWS Secrets successfully written to account: ",path))
+    message(paste0("AWS Secrets successfully written to account: "))
   }else{
-    message(paste0("Error with AWS Secrets for account: ",path))
+    message(paste0("Error with AWS Secrets for account: "))
   }
   return(res)
 }

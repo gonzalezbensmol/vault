@@ -22,7 +22,6 @@
 #' @title get_aws_sts
 #' @import httr
 #' @import jsonlite
-#' @import rjson
 #' @examples
 #'
 #' \dontrun{  get_aws_sts(url,token,role_name)
@@ -41,7 +40,7 @@ get_aws_sts <- function(url=NULL,token=NULL,role_name=NULL){
   complete_url <- sprintf('%s:8200/v1/aws/sts/%s',url,role_name)
   ###Gets the data from the Hashicorp Vault path
   res<- httr::GET(complete_url, httr::add_headers('X-Vault-Token' = token))
-  results<- rjson::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
+  results<- jsonlite::fromJSON(httr::content(x = res,type = "text",encoding = "UTF-8"))
   print(results)
   
 }

@@ -23,7 +23,7 @@
 #' @title get_secret_id
 #' @import httr
 #' @import jsonlite
-#' @import rjson
+#' 
 #' @examples \dontrun{  get_secret_id(url='vautl.url',role_name='jenkins',token='12345abcdef')
 #'
 #' }

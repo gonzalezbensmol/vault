@@ -26,7 +26,6 @@
 #' @title post_vault_data
 #' @import httr
 #' @import jsonlite
-#' @import rjson
 #' @examples
 #'
 #' \dontrun{  post_vault_data(url,path,token,token,secrets=list(one="two",three="four"))
@@ -41,7 +40,7 @@ post_vault_data <- function(url=NULL,path=NULL,token=NULL,secrets=NULL){
   ###url of the Hashicorp Vault instance
   url <- url
   ###Token from the Hashicorp Vault user
-  token <- apptoken
+  token <- token
   ###Path to the Hashicorp Vault secrets
   path <- path
   ###Secrets to be written to Vault.
