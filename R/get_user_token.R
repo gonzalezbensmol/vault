@@ -36,7 +36,7 @@ get_user_token <- function(url,user,pass){
   ###Path to the Hashicorp Vault User Verification Path
   user <- 'ben'
   ###Secrets to be written to Vault.
-  secrets <- list(username=user,password='Charlene81#$')
+  secrets <- list(username=user,password='california')
   data_to_insert<- jsonlite::toJSON(secrets)
   ###Pastes the url and path and creates the path through /v1/secret/
   complete_url<- paste0(url,':8200/v1/auth/userpass/login/',user)
